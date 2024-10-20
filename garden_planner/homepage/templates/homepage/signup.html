@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        /* Fullscreen Background Image with Blur */
+        body {
+            background-image: url("{% static 'homepage/SignIn2.jpeg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Blurred overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+            backdrop-filter: blur(10px); /* Blurs the background */
+            z-index: -1; /* Places it behind the content */
+        }
+
+        .navbar {
+            background-color: white;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: black;
+            font-size: 2rem;
+            font-family: 'Lobster', cursive;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .navbar .nav-link {
+            color: black !important;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .navbar-nav {
+            margin-left: 20px;
+        }
+
+        .navbar .btn {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar .btn:hover {
+            background-color: #218838;
+            box-shadow: 0px 4px 15px rgba(40, 167, 69, 0.6);
+        }
+
+        /* Form Section */
+        .form-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 100px); /* Adjusting height for better positioning, minus the navbar */
+            padding-top: 50px; /* Slight padding adjustment for the form to appear a bit higher */
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 450px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .create-account-link {
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .create-account-link a {
+            font-size: 14px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .create-account-link a:hover {
+            text-decoration: underline;
+        }
+
+        .next-button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            background-color: #28a745;
+            padding: 10px 0;
+            margin-top: 0; /* No margin above the footer */
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        footer {
+            background-color: #28a745;
+            color: #fff;
+            padding: 20px 0;
+            font-family: Calibri, sans-serif;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .center-section {
+            text-align: center;
+        }
+
+        .center-section h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .center-section p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .center-section a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .center-section a:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Dashboard (same across all pages) -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="navbar-brand">
+            <img src="{% static 'homepage/Logo1.png' %}" alt="Logo">
+            Sproutify
+        </div>
+    </nav>
+    
+    {% if message %}
+    <div class="alert alert-success" role="alert" style="width: 50%; margin: 0 auto; text-align: center; margin-top: 20px;">
+        {{ message }}
+    </div>
+    {% endif %}
+
+    <!-- Signup Form Section -->
+    <section class="form-section">
+        <div class="form-container">
+            <h2>Sign in</h2>
+            <form action="{% url 'mainpage' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="Username or E-Mail" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+
+                <div class="form-group form-buttons">
+                    <div class="create-account-link">
+                        <a href="{% url 'createaccount' %}">Create an account &gt;</a>
+                    </div>                    
+                    <button type="submit" class="next-button">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="center-section" id="contact-us">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:support@Sproutify.com">support@sproutify.com</a></p>
+                <p>Phone: +7 (475) 367-5274</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sproutify | All rights reserved.</p>
+        </div>
+    </footer> 
+</body>
+</html>

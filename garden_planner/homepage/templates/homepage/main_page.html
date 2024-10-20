@@ -1,0 +1,380 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sproutify Main Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            background-color: white;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: black;
+            font-size: 2rem;
+            font-family: 'Lobster', cursive;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .navbar .nav-link {
+            color: black !important;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .navbar-nav {
+            margin-left: 20px;
+        }
+
+        .navbar .btn {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar .btn:hover {
+            background-color: #218838;
+            box-shadow: 0px 4px 15px rgba(40, 167, 69, 0.6);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .category-section {
+            margin: 30px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .grid-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 150px; /* Set a fixed height for all images */
+            object-fit: cover; /* This will make sure the image is cropped to fit while keeping its aspect ratio */
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .grid-item p {
+            font-weight: bold; /* Makes the names bold */
+            margin-top: 10px;
+            font-size: 1.1rem;
+            color: #000; /* Set text color to black */
+        }
+
+        .grid-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            background-color: #f0f0f0; /* Light grey background on hover */
+        }
+
+        /* Remove underline on hover, focus, and active states */
+        .grid-item a {
+            text-decoration: none;
+        }
+
+        .grid-item a:hover,
+        .grid-item a:focus,
+        .grid-item a:active {
+            text-decoration: none; /* Ensure no underline appears during these states */
+        }
+
+        .show-all {
+            color: green;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+        .caption-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .caption-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+        .caption-section p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        section {
+            padding: 80px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        section p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #28a745;
+            color: #fff;
+            padding: 20px 0;
+            font-family: Calibri, sans-serif;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center; /* Centers the content horizontally */
+            align-items: center;    /* Centers the content vertically */
+            padding: 20px 0;
+        }
+
+        .center-section {
+            text-align: center;     /* Ensures the text is centered */
+        }
+
+        .center-section h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .center-section p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .center-section a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .center-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            background-color: #28a745;
+            padding: 10px 0;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+        .user-icon {
+            width: 90px; /* Adjust the width of the image */
+            height: 70px; /* Adjust the height of the image */
+            cursor: pointer; /* Show pointer on hover */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="navbar-brand">
+            <img src="{% static 'homepage/Logo1.png' %}" alt="Logo">
+            Sproutify
+        </div>
+        <div class="ml-auto">
+            <a href="{% url 'userdetails' %}">
+                <img src="{% static 'homepage/Usericon1.jpg' %}" alt="Sign Up" class="user-icon">
+            </a>
+        </div>
+    </nav>
+    <section class="caption-section">
+        <h1>Welcome to Sproutify</h1>
+        <p>Your guide to effortless and sustainable gardening.</p>
+    </section>
+    <h2>Fruits</h2>
+    <div class="category-section">
+        <div class="grid-container">
+            <div class="grid-item">
+                <a href="{% url 'apple' %}">
+                    <img src="{% static 'homepage/Apple.webp' %}" alt="Apples">
+                    <p>Apples</p>
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="">
+                    <img src="{% static 'homepage/Blueberries.jpg' %}" alt="Blueberries">
+                    <p>Blueberries</p>
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="">
+                    <img src="{% static 'homepage/Grapes.jpg' %}"  alt="Grapes">
+                    <p>Grapes</p>
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="">
+                    <img src="{% static 'homepage/Orange.jpg' %}"  alt="Oranges">
+                    <p>Oranges</p>
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="">
+                    <img src="{% static 'homepage/Strawberry.jpeg' %}"  alt="Strawberries">
+                    <p>Strawberries</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <h2>Vegetables</h2>
+    <div class="category-section">
+        <div class="grid-container">
+            <div class="grid-item">
+                <a href="">
+                    <img src="{% static 'homepage/Beetroot.jpg' %}"  alt="Beetroot">
+                    <p>Beetroot</p>
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="">
+                    <img src="{% static 'homepage/Carrot.jpg' %}"  alt="Carrots">
+                    <p>Carrots</p>
+                </a>
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'homepage/Onions.jpg' %}"  alt="Onions">
+                <p>Onions</p>
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'homepage/Potato.jpg' %}"  alt="Potatoes">
+                <p>Potatoes</p>
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'homepage/Tomatoes.jpg' %}"  alt="Tomatoes">
+                <p>Tomatoes</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Greens</h2>
+    <div class="category-section">
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="{% static 'homepage/Basil.jpg' %}"  alt="Basil">
+                <p>Basil</p>
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'homepage/Lettuce.jpg' %}"  alt="Lettuce">
+                <p>Lettuce</p>
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'homepage/Mint.jpg' %}"  alt="Mint">
+                <p>Mint</p>
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'homepage/Parsley.jpg' %}"  alt="Parsley">
+                <p>Parsley</p>
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'homepage/Spinach.jpg' %}"  alt="Spinach">
+                <p>Spinach</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Flowers</h2>
+    <div class="category-section">
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="{% static 'homepage/Daffodils.jpg' %}"  alt="Daffodils">
+                <p>Daffodils</p>
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'homepage/Lilies.jpg' %}"  alt="Lilies">
+                <p>Lilies</p>
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'homepage/Rose.jpg' %}"  alt="Rose">
+                <p>Rose</p>
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'homepage/Sunflower.jpg' %}"  alt="Sunflower">
+                <p>Sunflower</p>
+            </div>
+            <div class="grid-item">
+                <img src="{% static 'homepage/Tulips.jpg' %}"  alt="Tulip">
+                <p>Tulip</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="center-section" id="contact-us">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:support@sproutify.com">support@sproutify.com</a></p>
+                <p>Phone: +7 (475) 367-5274</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sproutify | All rights reserved.</p>
+        </div>
+    </footer> 
+</body>
+</html>
