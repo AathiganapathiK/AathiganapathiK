@@ -24,7 +24,7 @@
 - ⚡ Fun fact: I debug with coffee ☕ and persistence 🔥
 - 📫 Reach me at **aathiganapathik@gmail.com**
 
-<br/><br/><br/><br/>
+<br/><br/>
 
 ---
 
