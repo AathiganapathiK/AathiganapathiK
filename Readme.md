@@ -132,22 +132,14 @@
 
 ---
 
-## 🏅 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=AathiganapathiK&theme=algolia&no-frame=true&no-bg=true&margin-w=4&column=7" alt="GitHub Trophies"/>
-</div>
-
----
-
 ## 🙋 Let's Connect
 
 <div align="center">
-  <a href="mailto:your-email@gmail.com">
+  <a href="mailto:aathiganapathik@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
   </a>
   &nbsp;
-  <a href="https://linkedin.com/in/your-linkedin-id">
+  <a href="https://linkedin.com/in/aathiganapathi-k-41717728a/">
     <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
   &nbsp;
@@ -155,7 +147,7 @@
     <img src="https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
   </a>
   &nbsp;
-  <a href="https://leetcode.com/YOUR_LEETCODE_USERNAME">
+  <a href="https://leetcode.com/AathiganapathiK">
     <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
   </a>
 </div>
@@ -163,7 +155,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://visitcount.itsvg.in/api?id=AathiganapathiK&icon=6&color=1" alt="Profile Views"/>
+  <img src="https://linkedin.com/in/aathiganapathi-k-41717728a/" alt="Profile Views"/>
 </div>
 
 <!-- Footer Wave -->
