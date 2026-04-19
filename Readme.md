@@ -22,7 +22,7 @@
 - 💡 Love building **full-stack web apps** and **data-driven solutions**
 - 🌱 Currently exploring **Deep Learning & LLMs**
 - ⚡ Fun fact: I debug with coffee ☕ and persistence 🔥
-- 📫 Reach me at **your-email@gmail.com**
+- 📫 Reach me at **aathiganapathik@gmail.com**
 
 <br/><br/><br/><br/>
 
@@ -39,14 +39,13 @@
 ## 🧩 LeetCode Stats
 
 <div align="center">
-  <img src="https://leetcard.jacoblin.cool/YOUR_LEETCODE_USERNAME?theme=dark&font=Fira%20Code&ext=heatmap&border=0&radius=20" alt="LeetCode Stats"/>
+  <img src="https://leetcard.jacoblin.cool/AathiganapathiK?theme=dark&font=Fira%20Code&ext=heatmap&border=0&radius=20" alt="LeetCode Stats"/>
   <br/><br/>
   <a href="https://leetcode.com/YOUR_LEETCODE_USERNAME">
     <img src="https://img.shields.io/badge/LeetCode-Profile-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
   </a>
 </div>
 
-> ⚠️ Replace both instances of `YOUR_LEETCODE_USERNAME` above with your actual LeetCode username.
 
 ---
 
