@@ -41,7 +41,7 @@
 <div align="center">
   <img src="https://leetcard.jacoblin.cool/AathiganapathiK?theme=dark&font=Fira%20Code&ext=heatmap&border=0&radius=20" alt="LeetCode Stats"/>
   <br/><br/>
-  <a href="https://leetcode.com/YOUR_LEETCODE_USERNAME">
+  <a href="https://leetcode.com/AathiganapathiK">
     <img src="https://img.shields.io/badge/LeetCode-Profile-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
   </a>
 </div>
@@ -56,7 +56,7 @@
     <td width="50%">
       <h3 align="center">🔬 Project One</h3>
       <div align="center">
-        <a href="https://github.com/AathiganapathiK/your-repo-1" target="_blank">
+        <a href="[https://github.com/AathiganapathiK/your-repo-1](https://github.com/AathiganapathiK/soultalk-chatbot)" target="_blank">
           <img src="https://github-readme-stats.vercel.app/api/pin/?username=AathiganapathiK&repo=your-repo-1&theme=algolia&hide_border=true" alt="Project One"/>
         </a>
         <p>
