@@ -56,11 +56,11 @@
     <td width="50%">
       <h3 align="center">🔬 Project One</h3>
       <div align="center">
-        <a href="[https://github.com/AathiganapathiK/your-repo-1](https://github.com/AathiganapathiK/soultalk-chatbot)" target="_blank">
-          <img src="https://github-readme-stats.vercel.app/api/pin/?username=AathiganapathiK&repo=your-repo-1&theme=algolia&hide_border=true" alt="Project One"/>
+        <a href="https://github.com/AathiganapathiK/soultalk-chatbot" target="_blank">
+          <img src="https://github-readme-stats.vercel.app/api/pin/?username=AathiganapathiK&repo=https://github.com/AathiganapathiK/soultalk-chatbot&theme=algolia&hide_border=true" alt="Project One"/>
         </a>
         <p>
-          <a href="https://github.com/AathiganapathiK/your-repo-1">
+          <a href="[https://github.com/AathiganapathiK/your-repo-1](https://github.com/AathiganapathiK/soultalk-chatbot)">
             <img src="https://img.shields.io/badge/Code-View%20Repo-58A6FF?style=for-the-badge&logo=github"/>
           </a>
         </p>
